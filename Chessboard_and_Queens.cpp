@@ -15,19 +15,30 @@ using namespace std;
 #define pb push_back
 #define mod 1000000007
 
+ll fun(ll i, vector<vector<char>> &maze)
+{
+    
+}
 void solve()
 {
-    ll n,k;
-    cin>>n>>k;
+    vector<vector<char>> maze(8, vector<char>(8));
+    f(i, 0, 8)
+    {
+        f(j, 0, 8)
+        {
+            cin >> maze[i][j];
+        }
+    }
+    cout << fun(0, maze);
 }
 int main()
 {
-    
+
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    int t;
-    cin >> t;
+    int t = 1;
+    // cin >> t;
     while (t--)
     {
         solve();
