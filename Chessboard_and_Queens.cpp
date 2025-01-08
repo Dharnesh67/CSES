@@ -15,9 +15,48 @@ using namespace std;
 #define pb push_back
 #define mod 1000000007
 
+bool check(ll i,ll j,vector<vector<char>> &maze){
+    ll r=i,c=j;
+    while(r>=0){
+        if(maze[r][j]=='Q'){
+            return false;
+        }
+        r--;
+    }
+    r=i,c=j;
+    while(r>=0 && c>=0){
+        if(maze[r][c]=='Q'){
+            return false;
+        }
+        r--;
+        c--;
+    }
+    r=i,c=j;
+    while(r>=0 && c<8){
+        if(maze[r][c]=='Q'){
+            return false;
+        }
+        r--;
+        c++;
+    }
+    return true;
+}
 ll fun(ll i, vector<vector<char>> &maze)
 {
-    
+    if (i == 8)
+    {
+        return 1;
+    }
+    ll count=0;
+    f(j, 0, 8)
+    {
+        if(maze[i][j]!='*' &&  check(i,j,maze)){
+            maze[i][j]='Q';
+            count+=fun(i+1,maze);
+            maze[i][j]='.';
+        }
+    }
+    return count;
 }
 void solve()
 {
